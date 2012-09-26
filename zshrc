@@ -29,7 +29,9 @@ plugins=(git osx brew pip)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/.bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/X11/bin:/Library/Frameworks/Python.framework/Versions/Current/bin:Library/Ruby/Gems/1.8/bin
+export PATH=~/.bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/X11/bin:
+export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/Current/bin:Library/Ruby/Gems/1.8/bin
+export PATH=$PATH:~/.phabricator/arcanist/bin
 export EDITOR="subl -w"
 export VISUAL="subl -w"
 export VIRTUAL_ENV_DISABLE_PROMPT=true
@@ -62,6 +64,10 @@ alias app='open -a'
 alias vim='mvim'
 alias ack='ack --pager="less -R"'
 # alias mate='mvim'
+
+function rzsh {
+  source ~/.zshrc
+}
 
 function we() {
   cd ~/Projects/wepwawet/wepwawet/wepwawet

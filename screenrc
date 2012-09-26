@@ -1,0 +1,65 @@
+# ------------------------------------------------------------------------------
+# SCREEN SETTINGS
+# ------------------------------------------------------------------------------
+
+startup_message off
+defflow off
+deflogin off
+autodetach on
+
+bell_msg " >%n<"
+
+vbell off
+vbell_msg " !!!"
+
+# ------------------------------------------------------------------------------
+# SCREEN KEYBINDINGS
+# ------------------------------------------------------------------------------
+
+# Remove some stupid / dangerous key bindings
+bind ^[
+bind ^k
+bind ^\
+# Make them better
+bind \\ quit
+bind K kill
+bind I login on
+bind O login off
+bind } history
+
+bind ^a meta
+
+# Use backtick as command key, rather than ^a
+escape ``
+# Then we can bind switch-most-recent to just a rather than ^a
+bind a other
+
+# ------------------------------------------------------------------------------
+# TERMINAL SETTINGS
+# ------------------------------------------------------------------------------
+
+# The vt100 description does not mention "dl". *sigh*
+# termcapinfo vt100 dl=5\E[M
+
+# set these terminals up to be 'optimal' instead of vt100
+# termcapinfo xterm*|linux*|rxvt*|Eterm* OP
+
+# Change the xterm initialization string from is2=\E[!p\E[?3;4l\E[4l\E>
+# (This fixes the "Aborted because of window size change" konsole symptoms found
+#  in bug #134198)
+# termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+# ------------------------------------------------------------------------------
+# INDI STUFF
+# ------------------------------------------------------------------------------
+
+# Example of automatically running some programs in windows on screen startup.
+#
+# screen mutt
+# screen tf -n
+# screen finch
+# screen irssi -c anthro
+
+# Fancy screen list at bottom of term
+hardstatus alwayslastline
+hardstatus string "%{= bw} %-Lw%{= cb}%n%f*%t%{= bw}%+Lw"

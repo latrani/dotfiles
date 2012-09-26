@@ -1,0 +1,4 @@
+--smart-case
+--type-add=css=.scss
+--type-add=html=.mako
+--type-set=txt=.txt,.markdown,.md,.mucklog,.muckraw

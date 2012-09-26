@@ -29,7 +29,7 @@ plugins=(git osx brew pip)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/indi/.bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/X11/bin:/Library/Frameworks/Python.framework/Versions/Current/bin:Library/Ruby/Gems/1.8/bin
+export PATH=~/.bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/X11/bin:/Library/Frameworks/Python.framework/Versions/Current/bin:Library/Ruby/Gems/1.8/bin
 export EDITOR="subl -w"
 export VISUAL="subl -w"
 export VIRTUAL_ENV_DISABLE_PROMPT=true

@@ -24,7 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx brew pip)
+plugins=(git osx brew pip per-directory-history sublime dirpersist)
 
 source $ZSH/oh-my-zsh.sh
 

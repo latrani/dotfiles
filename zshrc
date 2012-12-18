@@ -26,17 +26,17 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git osx brew pip per-directory-history sublime)
 
-source $ZSH/oh-my-zsh.sh
-
 # Customize to your needs...
 export PATH=~/.bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/X11/bin:
-export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/Current/bin:Library/Ruby/Gems/1.8/bin
+export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/Current/bin
 export PATH=$PATH:~/.phabricator/arcanist/bin
+export PATH=$PATH:Library/Ruby/Gems/1.8/bin:/Library/Ruby/Gems/1.8/bin
 export EDITOR="subl -w"
 export VISUAL="subl -w"
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.rvm/scripts/rvm
 
 bindkey "^[[1~" beginning-of-line # Home
 bindkey "^[[4~" end-of-line # End
@@ -93,3 +93,6 @@ function cs() {
   ca
   pserve development.ini --reload
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+

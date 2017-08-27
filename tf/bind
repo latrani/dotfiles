@@ -1,0 +1,18 @@
+;; Additional Pagination
+/def key_up = /dokey_lineback
+/def key_down = /dokey_line
+
+/def key_ctrl_up   = /dokey_pgup
+/def key_ctrl_down = /dokey_pgdn
+/def key_ctrl_left = /fg ->
+/def key_ctrl_right = /fg -<
+
+/def key_esc_up   = /kb_up_or_recallb
+/def key_esc_down = /kb_down_or_recallf
+/def key_esc_left = /dokey_wleft
+/def key_esc_right = /dokey_wright
+
+;; Ctrl+L to redraw the page (including resize the input box, see hook file
+/bind ^l = /isize $[winlines() / 8 + 1] %; /dokey redraw
+
+/def key_tab = /a

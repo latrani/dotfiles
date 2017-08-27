@@ -1,0 +1,65 @@
+;; User Variables
+;; Directory root for autologging.
+/set LOGDIR ~/Logs/Mucks
+
+;; Use scrollback as an autocomplete corpus
+/require complete.tf
+
+;; Autopause on full pages. Use page down to see the rest.
+/more on
+
+;; Various smart settings; info on these can be found at:
+;; http://josh.flagrancy.net/manuals/tf/topics/special_variables.html
+
+;; Disable mailcheck
+/set maildelay=0
+
+;; Disabe activity marker ('more' usually covers it for me)
+;; /set textdiv=off
+
+;; Turn off warnings about new TF5 settings
+/set warn_5keys=off
+/set warn_status=off
+
+;; Indent by one space when wrapping long lines
+/set wrapspace=1
+
+;; Have TF continue immediately after coming back from the shell.
+;; (A few of my hooks require shell commands)
+/set shpause=0
+
+;; Send empty lines to server. Helps when pasting descriptions.
+/set snarf=off
+
+;; Set up a fancy status line.  See docs here:
+;; http://josh.flagrancy.net/manuals/tf/topics/status_line.html
+/set status_pad=_
+/set clock_format=(%H:%M
+/clock off
+/set status_int_world=fg_world() =~ "" ? "<no world>" : is_open(fg_world()) ? strcat("(", fg_world(), ")") : strcat("<", fg_world(), ">")
+/status_rm @read
+/status_rm insert
+/status_rm kbnum
+/status_edit @more:8:BCbgred
+/status_edit @world::BCblue
+/status_edit @active:11:BCred
+/status_edit @log:5:BCcyan
+/status_edit @mail:6:BCmagenta
+/status_edit @clock:6:BCgreen
+/status_rm @log
+
+;; Set locations of aux config files, and load them.
+/def MACROFILE  = ~/.tf/def
+/loaddef
+/def HILITEFILE = ~/.tf/hilite
+/loadhilite
+/def GAGFILE    = ~/.tf/gag
+/loadgag
+/def TRIGFILE   = ~/.tf/trig
+/loadtrig
+/def BINDFILE   = ~/.tf/bind
+/loadbind
+/def HOOKFILE   = ~/.tf/hook
+/loadhook
+/def WORLDFILE  = ~/.tf/world
+/loadworld

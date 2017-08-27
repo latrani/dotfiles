@@ -1,0 +1,16 @@
+;; Autologging. Save logs in the dir specified in the .tfrc, with subdirs by
+;; world, year, and month. If the world names have slashes in them, those will
+;; make subdirs. In the sample world configs, that's used to categorize by
+;; world and then character.
+/hook CONNECT * = /set LOGNAME %LOGDIR/%1/$(/time %%Y)/$(/time %%m)/$(/time %%F.%%H.%%M.%%S).log %; /sh -q mkdir -p `dirname %LOGNAME` %; /log -w%1 %LOGNAME %; /fg %1
+
+;; Stop logging on disconnect to clean up nicely
+/hook DISCONNECT * = /log -w%1 off
+
+;; Send a terminal bell on unseen activity
+/hook ACTIVITY * = /beep
+
+;; When the window is resized, we redraw the input area to have more or
+;; fewer lines depending on dimensions.
+/hook RESIZE * * = /isize $[winlines() / 8 + 1]
+/hook PROCESS * = /isize $[winlines() / 8 + 1]

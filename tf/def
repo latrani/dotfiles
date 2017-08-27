@@ -1,0 +1,39 @@
+;; Handy single-char commands for terms without good modifier key support.
+/def r = /recall 25
+/def > = /fg ->
+/def < = /fg -<
+/def n = /fg ->
+/def m = /fg -<
+/def f = /dokey_flush%; /dokey redraw%; /echo
+/def q = /send QUIT %; /fg ->
+
+;; For those with IRC reflexes.
+/def me = /send :%{*}
+
+;; Quote (upload) a file
+/def qf = /quote -S '%{1}
+
+;; Save the current log with a friendly name in the $LOGDIG/world/name dir.
+;; This will just copy the log at the current state, so it's best used when
+;; done with a scene.
+;; THESE DON'T WORK BECAUSE YOU CAN'T GET THE CURRENT WORLD LOG. :(
+;; /def archive = /sh cp %LOGDIR/%fg_world/$(/time %%Y)/$(/time %%m)/$(/time %%F.%%H.%%M.%%S).mucklog %LOGDIR/%fg_world/%1 ($(/time %%y%%m%%d)).mucklog
+;; /def archive = /sh cp %LOGNAME %LOGDIR/Named/%1 ($(/time %%y%%m%%d)).mucklog
+
+;; /def archive = \
+;;   /let mylog = 
+
+/def pc = /send @set me=%%s: %; @set me=%%o: %; @set me=%%p: %; @set me=%%a: %; @set me=%%r:
+/def pv = /send @set me=%%s:ve %; @set me=%%o:ver %; @set me=%%p:ver %; @set me=%%a:vis %; @set me=%%r:verself
+/def pm = /send @set me=%%s:he %; @set me=%%o:him %; @set me=%%p:his %; @set me=%%a:his %; @set me=%%r:himself
+/def pf = /send @set me=%%s:she %; @set me=%%o:her %; @set me=%%p:her %; @set me=%%a:hers %; @set me=%%r:herself
+
+;; /def a = \
+;;    /let break=$[strstr(%{active_worlds}, " ", 1)] %; \
+;;    /if (%break == -1) \
+;;        /fg %{active_worlds} %; \
+;;    /else \
+;;        /fg $[substr(%{active_worlds}, 0, %break)] %; \
+;;    /endif
+
+/def a = /to_active_or_prev_world

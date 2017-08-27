@@ -13,6 +13,7 @@ alias cl="clear"
 alias ack='ack --pager="less -R"'
 alias ag="ag --pager less"
 alias emacs="emacs -nw"
+alias t='tmuxinator'
 
 switch (uname)
   case Darwin

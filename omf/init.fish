@@ -18,5 +18,5 @@ switch (uname)
   case Darwin
     test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
     alias eclipse-sync="ssh -N -L 8385:localhost:8384 eclipse & sleep 1 ; open http://localhost:8385"
-    alias muck="mosh eclipse -- tmux attach"
+    alias muck="mosh eclipse -- tmuxinator default"
 end

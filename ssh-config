@@ -1,29 +1,4 @@
-Host latrani.net
-  User matrian
-
-Host prismaticmedia.com
+Host eclipse
+  Hostname eclipse.postfurry.net
   User indi
 
-Host glider.taurweb.net
-  User furspots
-
-Host atlantis
-  Hostname atlantis.local
-  User glowden
-  ForwardX11 yes
-
-Host atlantis.local
-  User glowden
-  ForwardX11 yes
-
-Host lemuria
-  Hostname lemuria.local
-  User glowden
-  ForwardX11 yes
-
-Host lemuria.local
-  User glowden
-  ForwardX11 yes
-
-Host axis.glowden.com
-  User mthomas

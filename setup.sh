@@ -10,6 +10,7 @@ ln -si ~/.mydotfiles/jshintrc ~/.jshintrc
 ln -si ~/.mydotfiles/tfrc ~/.tfrc
 ln -si ~/.mydotfiles/tf ~/.tf
 ln -si ~/.mydotfiles/tmux ~/.tmux
+ln -si ~/.mydotfiles/tmuxinator ~/.tmuxinator
 ln -si ~/.mydotfiles/tmux.conf ~/.tmux.conf
 ln -si ~/.mydotfiles/omf ~/.config/omf
 

@@ -16,3 +16,7 @@
 /bind ^l = /isize $[winlines() / 8 + 1] %; /dokey redraw
 
 /def key_tab = /a
+
+;; NOOP
+/def key_f11
+/def key_esc_f11 

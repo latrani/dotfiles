@@ -8,7 +8,7 @@
 ;; Highlights in this section require a change to in-muck message formatting.
 ;; Highlight pages with blue.
 ;; On some mucks you may need to do some setup: "p #prepend PAGE"
-/def -F -mregexp -t"^PAGE:" -PBCblue
+/def -F -mregexp -t"^PAGE( [><] )?:" -PBCblue
 /def -F -mregexp -t"^WHISPER:" -PBCblue
 
 ;; Highlight watchfor messages with red.
@@ -16,4 +16,4 @@
 /def -F -mregexp -t"^WF:" -PBCred
 
 ;; Highlight (pfmuck-style) channel messages in cyan
-/def -F -mregexp -t"^>>.*:" -PBCcyan
+/def -F -mregexp -t"^>>.*?:" -PBCcyan

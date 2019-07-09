@@ -2,7 +2,7 @@
 ;; world, year, and month. If the world names have slashes in them, those will
 ;; make subdirs. In the sample world configs, that's used to categorize by
 ;; world and then character.
-/hook CONNECT * = /set LOGNAME %LOGDIR/%1/$(/time %%Y)/$(/time %%m)/$(/time %%F.%%H.%%M.%%S).log %; /sh -q mkdir -p `dirname %LOGNAME` %; /log -w%1 %LOGNAME %; /fg %1
+/hook CONNECT * = /set LOGNAME %LOGDIR/%1/$(/time %%Y)/$(/time %%m)/$(/time %%F.%%H.%%M.%%S).txt %; /sh -q mkdir -p `dirname %LOGNAME` %; /log -w%1 %LOGNAME %; /fg %1
 
 ;; Stop logging on disconnect to clean up nicely
 /hook DISCONNECT * = /log -w%1 off

@@ -37,3 +37,5 @@
 ;;    /endif
 
 /def a = /to_active_or_prev_world
+
+/def everify = @email #verify yes %; QUIT
